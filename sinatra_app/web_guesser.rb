@@ -1,5 +1,7 @@
 require 'sinatra'
 
+
+X = rand(100)
 get '/' do
-  "Hello, World!"
+    "random number: #{X}"
 end
