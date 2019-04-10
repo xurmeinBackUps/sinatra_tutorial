@@ -1,27 +1,26 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-number = rand(100)
+NUMBER = rand(100)
 
 results = ['Way too high!', 'Too high!', 'Too low!', 'Way too low!', 'You guessed the right number!']
 
 def check_guess(guess)
-    if guess == number 
+    if guess == NUMBER 
         puts results.last
-    elseif guess >= number + 5
+    elseif guess >= NUMBER + 5
         puts results[0]
-    elseif guess == number + 1 ... number + 5
+    elseif guess == NUMBER + 1 ... NUMBER + 5
         puts results[1]
-    elseif guess == number - 1 ... number - 5
+    elseif guess == NUMBER - 1 ... NUMBER - 5
         puts results[2]
-    else guess <= number - 5 
-        puts results[4]
+    else guess <= NUMBER - 5 
+        puts results[3]
     end
 end
 
-
 get '/' do
-    guess = params['guess'.to_i]
-    results = check_guess('guess')
-    erb :index, :locals => {:number => number, :results => results}
+    guess = params['guess']
+    results = check_guess(guess)
+    erb :index, :locals => {:NUMBER => NUMBER, :results => results}
 end
