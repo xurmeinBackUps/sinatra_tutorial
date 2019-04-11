@@ -1,3 +1,5 @@
 module ArticlesHelper
-    # article_path(id)
+    def article_params
+        params.require(:article).permit(:title, :body)
+    end
 end
