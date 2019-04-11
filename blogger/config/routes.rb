@@ -1,3 +1,3 @@
-Blogger::Application.routes.draw do
-  resources :articles
+Rails.application.routes.draw do
+  resource :articles
 end
