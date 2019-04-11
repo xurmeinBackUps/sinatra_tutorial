@@ -1,5 +1,14 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.body %></p>
-<%= link_to '<< Back to articles of list', articles_path %>
-<%= link_to 'EDIT', edit_article_path(@article) %>
-<%= link_to 'DELETE', article_path(@article), method: :delete, data: {confirm: 'you sure, bro?'} %>
+<br />
+<ul>
+    <li><%= link_to '<< Back to articles of list', articles_path %></li>
+    <li><%= link_to 'EDIT', edit_article_path(@article) %></li>
+    <li><%= link_to 'DELETE', article_path(@article), method: :delete, data: {confirm: 'you sure, bro?'} %></li>
+</ul>
+<br />
+<hr />
+<h2>COMMENT SECTION</h2>
+<%= render partial: 'articles/comment', collection: @article.comments %>
+
+
