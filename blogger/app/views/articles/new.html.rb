@@ -1,6 +1,6 @@
 <h1>Write a New Article</h1>
 
-<%= form_for(@article) do |f| $>
+<%= form_for(@article) do |f| %>
     <ul>
     <% @article.errors.full_messages.each do |error| %>
         <li><%= error %></li>
