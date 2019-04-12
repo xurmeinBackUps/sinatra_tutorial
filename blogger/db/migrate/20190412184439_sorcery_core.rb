@@ -9,6 +9,6 @@ class SorceryCore < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :authors, :email, unique: true
+    add_index :authors, :username, :email, unique: true
   end
 end

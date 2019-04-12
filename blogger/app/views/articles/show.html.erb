@@ -14,6 +14,7 @@
 <br />
 <ul>
     <li><%= link_to '<< Back to articles of list', articles_path %></li>
+    
     <li><%= link_to 'EDIT', edit_article_path(@article) %></li>
     <li><%= link_to 'DELETE', article_path(@article), method: :delete, data: {confirm: 'you sure, bro?'} %></li>
 </ul>
